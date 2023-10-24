@@ -1,12 +1,24 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import UserTypes from './src/screens/UserType';
+import {MD3LightTheme as DefaultTheme, PaperProvider} from 'react-native-paper';
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    secondary: 'yellow',
+  },
+};
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <UserTypes />
-    </SafeAreaView>
+    <PaperProvider theme={theme}>
+      <SafeAreaView style={styles.container}>
+        <UserTypes />
+      </SafeAreaView>
+    </PaperProvider>
   );
 };
 

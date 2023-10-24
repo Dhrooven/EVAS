@@ -6,7 +6,7 @@ const UserTypes = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonContainer}>
-        <Text style={styles.Text}>Select the user type</Text>
+        <Text style={styles.customText}>Select the user type</Text>
         <MyButtons text={'Citizen'} styleData={styles.citizenButton} />
         <MyButtons text={'Agent'} styleData={styles.agentButton} />
       </View>
@@ -25,17 +25,17 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     margin: 40,
   },
-  Text: {
-    fontFamily: 'Helvetica',
-    fontSize: 22,
+  customText: {
+    fontFamily: 'PlayfairDisplay-SemiBold',
+    fontSize: 35,
     color: 'white',
   },
   citizenButton: {
     color: 'white',
     backgroundColor: 'grey',
-    padding: 10,
+    padding: 1,
     borderRadius: 30,
-    margin: 25,
+    margin: 20,
     // marginLeft: '15%',
     // marginRight: '15%',
     // marginBottom: '20',
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   agentButton: {
     color: 'white',
     backgroundColor: 'grey',
-    padding: 10,
+    padding: 1,
     borderRadius: 30,
     margin: 20,
     // marginLeft: '15%',

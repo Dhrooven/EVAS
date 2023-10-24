@@ -14,7 +14,9 @@ const MyButtons = props => {
 
 const styles = StyleSheet.create({
   button: {
-    fontFamily: '',
+    fontFamily: 'TiltNeon-Regular',
+    fontSize: 28,
+    // fontWeight: 'bold',
   },
 });
 export default MyButtons;

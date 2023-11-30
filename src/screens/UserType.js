@@ -1,14 +1,14 @@
-import React from 'react';
-import {SafeAreaView, Text, StyleSheet, View} from 'react-native';
-import MyButtons from '../components/MyButtons';
+import React from 'react'
+import {SafeAreaView, Text, StyleSheet, View} from 'react-native'
+import MyButtons from '../components/MyButtons'
 
 const UserTypes = () => {
   const handleCitizenClick = () => {
-    console.log('CitizenClick');
-  };
+    console.log('CitizenClick')
+  }
   const handleAgentClick = () => {
-    console.log('AgentClick');
-  };
+    console.log('AgentClick')
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonContainer}>
@@ -25,8 +25,8 @@ const UserTypes = () => {
         />
       </View>
     </SafeAreaView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -64,5 +64,5 @@ const styles = StyleSheet.create({
     // marginRight: '15%',
     // marginTop: '20',
   },
-});
-export default UserTypes;
+})
+export default UserTypes

@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import UserTypes from './src/screens/UserType';

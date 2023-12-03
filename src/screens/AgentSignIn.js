@@ -25,6 +25,7 @@ const AgentSignIn = () => {
   return (
     <SafeAreaView>
       <View>
+        <Text>Hello</Text>    
         <form onSubmit={formik.handleSubmit}>
           <label htmlFor='Name'>Name</label>
           <input
@@ -51,7 +52,6 @@ const AgentSignIn = () => {
           {formik.touched.VehicleNo && formik.errors.VehicleNo ? (
             <div>{formik.errors.VehicleNo}</div>
           ) : null}
-        </form>
 
         <RNPickerSelect
           onValueChange={formik.handleChange}
@@ -64,6 +64,10 @@ const AgentSignIn = () => {
             {label: 'C', value: 'C'},
           ]}
         />
+
+        
+        <button type='submit'>Submit</button>
+    </form>
       </View>
     </SafeAreaView>
   )

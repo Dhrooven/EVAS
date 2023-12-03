@@ -1,30 +1,45 @@
 import React from 'react'
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
 import {SafeAreaView, Text, StyleSheet, View} from 'react-native'
 import MyButtons from '../components/MyButtons'
+import {State} from 'react-native-gesture-handler'
+import AgentSignIn from '../screens/AgentSignIn.js'
 
-const UserTypes = () => {
-  const handleCitizenClick = () => {
-    console.log('CitizenClick')
-  }
-  const handleAgentClick = () => {
-    console.log('AgentClick')
-  }
+const Stack = createStackNavigator();
+
+function AgenSignin({navigation}) {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.buttonContainer}>
-        <Text style={styles.customText}>Select the user type</Text>
-        <MyButtons
-          text={'Citizen'}
-          styleData={styles.citizenButton}
-          onPress={handleCitizenClick}
-        />
-        <MyButtons
-          text={'Agent'}
-          styleData={styles.agentButton}
-          onPress={handleAgentClick}
-        />
-      </View>
-    </SafeAreaView>
+    <View style={styles.buttonContainer}>
+      <MyButtons
+        text={'Agent'}
+        styleData={styles.agentButton}
+        onPress={navigation.navigate('AgentSignIn')}
+      />
+    </View>
+  )
+}
+
+function CitiSignIn({navigation}) {
+  return (
+    <View style={styles.buttonContainer}>
+      <MyButtons
+        text={'Citizen'}
+        styleData={styles.citizenButton}
+        onPress={navigation.navigate('CitiSignin')}
+      />
+    </View>
+  )
+}
+
+const UserTypes = ({navigation}) => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='UserTypes'>
+        <Stack.Screen name='AgentSignIn' component={AgenSignin} />
+        <Stack.Screen name='Citizen' component={CitiSignIn} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 

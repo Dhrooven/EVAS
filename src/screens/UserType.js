@@ -36,8 +36,8 @@ const UserTypes = ({navigation}) => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='UserTypes'>
-        <Stack.Screen name='AgentSignIn' component={AgenSignin} />
-        <Stack.Screen name='Citizen' component={CitiSignIn} />
+        <Stack.Screen name='AgenSignIn' component={AgenSignin} />
+//        <Stack.Screen name='Citizen' component={CitiSignIn} />
       </Stack.Navigator>
     </NavigationContainer>
   )

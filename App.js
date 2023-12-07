@@ -6,25 +6,6 @@ import test from './src/screens/test'
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {withFormik} from 'formik'
-//import {MD3LightTheme as DefaultTheme, PaperProvider} from 'react-native-paper';
-
-// const theme = {
-//   ...DefaultTheme,
-//   colors: {
-//     ...DefaultTheme.colors,
-//     primary: 'tomato',
-//     secondary: 'yellow',
-//   },
-// };
-
-// const navigator = createStackNavigator({
-//   Home: UserTypes
-// }, {
-//   initialRouteName: "UserTypes",
-//   defaultNavigationOptions: {
-//     title: "EVAS"
-//   }
-// })
 
 const Stack = createStackNavigator()
 
@@ -37,7 +18,6 @@ const App = () => {
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>
-    //</PaperProvider>
   )
 }
 

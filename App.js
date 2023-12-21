@@ -14,7 +14,7 @@ const App = () => {
     <NavigationContainer>
       <SafeAreaView style={styles.container}>
         <Stack.Navigator>
-          <Stack.Screen name="test" component={test} />
+          <Stack.Screen name="UserTypes" component={UserTypes} options={{ title: 'Select the user type' }} />
         </Stack.Navigator>
       </SafeAreaView>
     </NavigationContainer>

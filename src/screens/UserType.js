@@ -1,51 +1,53 @@
 import React from 'react'
-import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {SafeAreaView, Text, StyleSheet, View} from 'react-native'
 import MyButtons from '../components/MyButtons'
-import {State} from 'react-native-gesture-handler'
-import AgentSignIn from '../screens/AgentSignIn.js'
+import AgentSignIn from './AgentSignIn.js'
+import { withNavigation } from 'react-navigation' // Import withNavigation
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
-function AgenSignin({navigation}) {
+function SignInAgent({navigation}) {
   return (
     <View style={styles.buttonContainer}>
       <MyButtons
         text={'Agent'}
         styleData={styles.agentButton}
-        onPress={navigation.navigate('AgentSignIn')}
+        onPress={() => navigation.navigate('AgentSignIn')}
       />
     </View>
   )
 }
 
-function CitiSignIn({navigation}) {
+function SignInCity({navigation}) {
   return (
     <View style={styles.buttonContainer}>
       <MyButtons
         text={'Citizen'}
         styleData={styles.citizenButton}
-        onPress={navigation.navigate('CitiSignin')}
+        onPress={() => navigation.navigate('CitiSignin')}
       />
     </View>
   )
 }
 
-const UserTypes = ({navigation}) => {
+const AgentSignInWithNavigation = withNavigation(SignInAgent)
+const CitiSignInWithNavigation = withNavigation(SignInCity)
+
+const UserTypes = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='UserTypes'>
-        <Stack.Screen name='AgenSignIn' component={AgenSignin} />
-//        <Stack.Screen name='Citizen' component={CitiSignIn} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={styles.container}>
+      <AgentSignInWithNavigation />
+      <CitiSignInWithNavigation />
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center',
     flex: 1,
   },
   buttonContainer: {
